@@ -14,16 +14,15 @@ API
 Fetch raw K-Line data for time intervals:
 1 minute, 5 minutes, and 60 minutes.
 Query indicators like MACD and RSI.
-Frontend
 
+### Frontend
 Visualizes K-Line data on an interactive chart using react-chartjs-2.
-Performance Optimization
 
+### Performance Optimization
 Optimized database schema for high-frequency data.
 Efficient querying mechanisms for better API response times.
-Folder Structure
-graphql
-.
+
+### Folder Structure
 ```bash
 ├── backend/                # Backend service files
 │   ├── app/
@@ -60,8 +59,8 @@ Internet connection for dependency installation.
 #### Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone git@github.com:itisprasad/klinemanage.git 
+cd klinemanage
 ```
 
 Build and Start Services Use Docker Compose to build and start both backend and frontend services:
@@ -78,12 +77,14 @@ Frontend: http://localhost:3000
 
 ### Backend Service
 #### API Endpoints
-Endpoint	Method	Description
-/kline?interval=1min	GET	Retrieve K-Line data (1min interval)
-/kline?interval=5min	GET	Retrieve K-Line data (5min interval)
-/kline?interval=60min	GET	Retrieve K-Line data (60min interval)
+```bash
+Endpoint	                Method	Description
+/kline?interval=1min	        GET	Retrieve K-Line data (1min interval)
+/kline?interval=5min	        GET	Retrieve K-Line data (5min interval)
+/kline?interval=60min	        GET	Retrieve K-Line data (60min interval)
 /indicator/macd?symbol=BTC	GET	Get MACD data for a symbol
 /indicator/rsi?symbol=BTC	GET	Get RSI data for a symbol
+```
 
 ### Frontend Service
 #### Overview
@@ -121,4 +122,3 @@ Indexing is applied on frequently queried columns.
 ### API Response Times
 Data is paginated for large responses.
 Heavy calculations (e.g., MACD, RSI) are cached for repeated requests.
-
