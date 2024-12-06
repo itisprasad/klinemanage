@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Data Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Market Data Viewer</h1>
+    <select id="symbol">
+        <option value="BTC/USD">BTC/USD</option>
+        <option value="ETH/USD">ETH/USD</option>
+    </select>
+    <select id="interval">
+        <option value="1min">1 Minute</option>
+        <option value="5min">5 Minutes</option>
+        <option value="60min">1 Hour</option>
+    </select>
+    <button onclick="loadData()">Load Data</button>
+    <canvas id="chart" width="800" height="400"></canvas>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

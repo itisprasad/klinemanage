@@ -1,9 +1,8 @@
-## Financial Market Data Service
-
+Financial Market Data Service
 This is a small service designed to process financial market data, calculate technical indicators, and provide a REST API and frontend for querying and visualizing the processed data.
 
-## Features
-### Data Processing
+Features
+Data Processing
 
 Stores 1-minute K-Line data efficiently.
 Calculates and provides key technical indicators:
@@ -48,50 +47,44 @@ Copy code
 │
 ├── docker-compose.yml      # Docker Compose file to run both services
 └── README.md               # This file
-
-### Getting Started
-#### Prerequisites
+Getting Started
+Prerequisites
 Docker
 Docker Compose
 Internet connection for dependency installation.
 Setup Instructions
 Clone the Repository
 
-```bash
+bash
+Copy code
 git clone <repository-url>
 cd <repository-folder>
-```
 Build and Start Services Use Docker Compose to build and start both backend and frontend services:
 
-```bash
+bash
+Copy code
 docker-compose up --build
-```
-
-### Access the Services
+Access the Services
 
 Backend API: http://localhost:8000/docs (Swagger UI)
 Frontend: http://localhost:3000
-
-
-### Backend Service
-#### API Endpoints
+Backend Service
+API Endpoints
 Endpoint	Method	Description
 /kline?interval=1min	GET	Retrieve K-Line data (1min interval)
 /kline?interval=5min	GET	Retrieve K-Line data (5min interval)
 /kline?interval=60min	GET	Retrieve K-Line data (60min interval)
 /indicator/macd?symbol=BTC	GET	Get MACD data for a symbol
 /indicator/rsi?symbol=BTC	GET	Get RSI data for a symbol
-
-### Frontend Service
-#### Overview
+Frontend Service
+Overview
 The frontend is built using React and displays K-Line data on a dynamic chart.
 
-#### Key Features
+Key Features
 Chart rendering using react-chartjs-2.
 Auto-fetching data from the backend API.
-
-### Technical Details
-#### Backend
+Technical Details
+Backend
 Framework: FastAPI
 Database: SQLite
 ORM: SQLAlchemy
@@ -100,8 +93,7 @@ fastapi
 uvicorn
 pandas
 sqlalchemy
-
-#### Frontend
+Frontend
 Framework: React
 Dependencies:
 react
@@ -109,13 +101,10 @@ react-chartjs-2
 chart.js
 Performance Optimization
 Data Ingestion
-
 The database uses a compact schema for high-frequency K-Line data.
-
-### Querying
+Querying
 Indexing is applied on frequently queried columns.
-
-### API Response Times
+API Response Times
 Data is paginated for large responses.
 Heavy calculations (e.g., MACD, RSI) are cached for repeated requests.
 
