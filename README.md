@@ -23,8 +23,8 @@ Optimized database schema for high-frequency data.
 Efficient querying mechanisms for better API response times.
 Folder Structure
 graphql
-Copy code
 .
+```bash
 ├── backend/                # Backend service files
 │   ├── app/
 │   │   ├── database.py     # Database connection and query logic
@@ -48,19 +48,22 @@ Copy code
 │
 ├── docker-compose.yml      # Docker Compose file to run both services
 └── README.md               # This file
+```
 
 ### Getting Started
 #### Prerequisites
 Docker
 Docker Compose
 Internet connection for dependency installation.
-Setup Instructions
-Clone the Repository
+
+### Setup Instructions
+#### Clone the Repository
 
 ```bash
 git clone <repository-url>
 cd <repository-folder>
 ```
+
 Build and Start Services Use Docker Compose to build and start both backend and frontend services:
 
 ```bash
